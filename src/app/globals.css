@@ -1,8 +1,8 @@
 @import "tailwindcss";
-@font-face {
-  font-family: 'Atyp';
-  src: url(../../public/Atyp.ttf);
+@theme inline{
+  --font-main:var(--font-atyp)
 }
+
 body {
  padding: 0;
   margin: 0;

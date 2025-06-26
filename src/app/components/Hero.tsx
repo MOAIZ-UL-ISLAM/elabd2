@@ -3,7 +3,12 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import localFont from 'next/font/local'
 
+const myFont = localFont({
+    src: '../../../public/Atyp.ttf',
+    variable: '--font-atyp',
+})
 
 
 const HeroSection = () => {
@@ -31,12 +36,12 @@ const HeroSection = () => {
 
 
     return (
-        <section className="relative w-full flex flex-col items-center justify-center overflow-hidden py-16 px-4 sm:px-8 md:px-16 lg:px-22">
+        <section className={`${myFont.className} relative w-full flex flex-col items-center justify-center overflow-hidden py-16 px-4 sm:px-8 md:px-16 lg:px-22}`}>
             <div className="flex flex-col lg:flex-row items-center justify-between w-full ">
                 {/* Left Content Area */}
                 <div className="flex flex-col items-start lg:w-3/5 text-left mb-12 lg:mb-0">
                     <motion.h1
-                        className="text-5xl sm:text-6xl tracking-wider md:text-7xl lg:text-5xl font-extrabold text-black leading-tight mb-8"
+                        className="font-main text-5xl sm:text-6xl tracking-wider md:text-7xl lg:text-5xl font-extrabold text-black leading-tight mb-8"
                         variants={textVariants}
                         initial="hidden"
                         animate="visible"
