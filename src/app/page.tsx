@@ -11,6 +11,7 @@ export default function Home() {
 
   return (
     <>
+
       <CustomCursor
         isHovering={isHoveringLinkOrButton}
         hoveredElement={hoveredElement}

@@ -4,6 +4,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import localFont from 'next/font/local'
+import Image from 'next/image';
 
 const myFont = localFont({
     src: '../../../public/Atyp.ttf',
@@ -36,33 +37,33 @@ const HeroSection = () => {
 
 
     return (
-        <section className={`${myFont.className} relative w-full flex flex-col items-center justify-center overflow-hidden py-16 px-4 sm:px-8 md:px-16 lg:px-22}`}>
-            <div className="flex flex-col lg:flex-row items-center justify-between w-full ">
+        <section className={`${myFont.className} relative w-full flex flex-col items-center justify-center overflow-hidden bg-black}`}>
+            <div className="flex flex-col lg:flex-row items-center justify-between w-full px-22 ">
                 {/* Left Content Area */}
-                <div className="flex flex-col items-start lg:w-3/5 text-left mb-12 lg:mb-0">
+                <div className="flex flex-col items-start lg:w-4/5 py-12 text-left mb-12 lg:mb-0">
                     <motion.h1
-                        className="font-main text-5xl sm:text-6xl tracking-wider md:text-7xl lg:text-5xl font-extrabold text-black leading-tight mb-8"
+                        className="font-main text-3xl sm:text-3xl tracking-wider md:text-4xl lg:text-5xl  text-black leading-16 mb-8"
                         variants={textVariants}
                         initial="hidden"
                         animate="visible"
                     >
-                        Global design agency that creates <br /> holistic, well-balanced design <br /> solutions for inspiring brands.
+                        Global design agency that creates <br /> holistic, well-balanced design <br /> solutions for inspiring brands
                     </motion.h1>
 
                     {/* Ratings and Services */}
                     <motion.div
-                        className="flex flex-col sm:flex-row items-start sm:items-center space-y-6 sm:space-y-0 sm:space-x-12 mt-8"
+                        className="flex flex-col sm:flex-row items-start sm:items-center space-y-6 sm:space-y-0 sm:space-x-12 "
                         variants={reviewsVariants}
                         initial="hidden"
                         animate="visible"
                     >
                         {/* Ratings */}
                         <div className="flex items-center">
-                            <span className="text-3xl font-bold text-black mr-2">C</span>
+                            <Image src='/clogo.png' alt='logo' height={60} width={100} className=" object-none m-0 p-0" />
                             <div className="flex flex-col items-start">
                                 <div className="flex">
                                     {[...Array(5)].map((_, i) => (
-                                        <svg key={i} className="w-5 h-5 text-yellow-500 fill-current" viewBox="0 0 24 24">
+                                        <svg key={i} className="w-4 h-4 text-yellow-500 fill-current" viewBox="0 0 24 24">
                                             <path d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.908-7.416 3.908 1.48-8.279-6.064-5.828 8.332-1.151z" />
                                         </svg>
                                     ))}
@@ -72,7 +73,7 @@ const HeroSection = () => {
                         </div>
 
                         {/* Services List */}
-                        <div className="text-gray-700 text-base font-medium leading-relaxed uppercase tracking-wider">
+                        <div className="text-gray-400 text-base font-medium uppercase tracking-wider">
                             WEB DEVELOPMENT / BRANDING / UX / UI / <br />
                             3D MODELING / ILLUSTRATION / STRATEGY
                         </div>
@@ -80,15 +81,14 @@ const HeroSection = () => {
                 </div>
 
                 {/* Right Image/Graphic Area */}
-                <div className="relative  flex justify-center items-center border-black border">
+                <div className="relative">
                     <motion.div
-                        className="relative w-32 h-32  rounded-full bg-purple-100 flex items-center justify-center overflow-hidden"
+                        className="relative w-120 h-120  rounded-full  flex items-center justify-center overflow-hidden"
                         variants={eyeImageVariants}
                         initial="hidden"
                         animate="visible"
                     >
-                        {/* Eye Graphic - This is a simplified SVG representation.
-                            For a precise match, you might use an actual SVG or Image. */}
+
                         <svg
                             className="w-22 h-22 text-purple-700 absolute"
                             viewBox="0 0 100 100"
@@ -99,29 +99,45 @@ const HeroSection = () => {
                             <path d="M20 50 Q50 20 80 50 Q50 80 20 50 Z" fill="none" stroke="currentColor" strokeWidth="2"></path>
                         </svg>
 
-                        {/* Text "SCROLLDOWN TO SEE THAT SHIT" */}
-                        <div className="absolute inset-0 flex items-center justify-center text-center">
-                            <p
-                                className="absolute text-purple-800 font-bold text-sm sm:text-base rotate-[290deg] whitespace-nowrap"
-                                style={{ transformOrigin: 'center' }}
-                            >
-                                SCROLLDOWN TO SEE THAT SHIT
-                            </p>
+
+                        <div className="flex items-center justify-center">
+                            <svg width="200" height="200" viewBox="0 0 300 300" className="animate-[spin_10s_linear_infinite]">
+                                <defs>
+                                    <path id="circlePath" d="M150,150 m-100,0 a100,100 0 1,1 200,0 a100,100 0 1,1 -200,0" className='' />
+                                </defs>
+                                <text fill="purple" className='text-purple-500' fontSize="37" fontWeight="bold">
+                                    <textPath href="#circlePath" startOffset="0%">
+                                        SCROLL DOWN TO SEE THAT SHIT
+                                    </textPath>
+                                </text>
+                            </svg>
+
+                            <style jsx>{`
+                                    @keyframes spin {
+                                    0% {
+                                        transform: rotate(0deg);
+                                    }
+                                    100% {
+                                        transform: rotate(360deg);
+                                    }
+                                    }
+                                `}
+                            </style>
                         </div>
                     </motion.div>
                 </div>
-            </div>
+            </div >
 
-            {/* Bottom Right "Our Capabilities Deck" Button */}
+
             <motion.button
-                className="absolute bottom-12 right-16 px-6 py-3 bg-gray-200 text-gray-800 rounded-full text-lg font-medium shadow-sm hover:bg-gray-300 transition-colors"
+                className="absolute bottom-12 right-60 px-6 py-3 bg-gray-200 text-gray-800 rounded-full text-sm font-medium shadow-sm hover:bg-gray-300 transition-colors"
                 variants={capabilitiesVariants}
                 initial="hidden"
                 animate="visible"
             >
                 Our Capabilities Deck
-            </motion.button>
-        </section>
+            </motion.button >
+        </section >
     );
 };
 
