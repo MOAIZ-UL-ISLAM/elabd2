@@ -4,6 +4,8 @@ import { useState } from "react";
 import CustomCursor from "./components/Cursor";
 import Navbar from "./components/Navbar";
 import HeroSection from "./components/Hero";
+import Showvideo from "./components/Showvideo";
+import About from "./components/About";
 
 export default function Home() {
   const [isHoveringLinkOrButton, setIsHoveringLinkOrButton] = useState(false)
@@ -21,6 +23,8 @@ export default function Home() {
         setHoveredElement={setHoveredElement}
       />
       <HeroSection />
+      <Showvideo />
+      <About />
     </>
   );
 }

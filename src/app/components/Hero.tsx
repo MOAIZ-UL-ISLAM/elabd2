@@ -37,10 +37,10 @@ const HeroSection = () => {
 
 
     return (
-        <section className={`${myFont.className} relative w-full flex flex-col items-center justify-center overflow-hidden bg-black}`}>
-            <div className="flex flex-col lg:flex-row items-center justify-between w-full px-22 ">
+        <section className={`${myFont.className} relative w-full flex flex-col items-center justify-center overflow-hidden }`}>
+            <div className="flex flex-col lg:flex-row items-center justify-between w-full px-2 mt-36 ">
                 {/* Left Content Area */}
-                <div className="flex flex-col items-start lg:w-4/5 py-12 text-left mb-12 lg:mb-0">
+                <div className="flex flex-col items-start lg:w-4/5 px-18 text-left mb-12 lg:mb-0">
                     <motion.h1
                         className="font-main text-3xl sm:text-3xl tracking-wider md:text-4xl lg:text-5xl  text-black leading-16 mb-8"
                         variants={textVariants}
@@ -130,7 +130,7 @@ const HeroSection = () => {
 
 
             <motion.button
-                className="absolute bottom-12 right-60 px-6 py-3 bg-gray-200 text-gray-800 rounded-full text-sm font-medium shadow-sm hover:bg-gray-300 transition-colors"
+                className="absolute bottom-12 right-60 px-2 py-2 bg-gray-200 text-gray-800 rounded-full text-sm font-medium shadow-sm hover:bg-gray-300 transition-colors"
                 variants={capabilitiesVariants}
                 initial="hidden"
                 animate="visible"

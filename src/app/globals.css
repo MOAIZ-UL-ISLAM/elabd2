@@ -8,4 +8,24 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: 'Geist', sans-serif;
+  overflow-x: hidden;
+}
+
+.mouse{
+  z-index: 1000;
+}
+
+
+@utility no-scrollbar {
+  @apply [scrollbar-width:none] [&::-webkit-scrollbar]:hidden;
+}
+
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
 }
