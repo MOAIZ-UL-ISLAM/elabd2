@@ -6,6 +6,8 @@ import Navbar from "./components/Navbar";
 import HeroSection from "./components/Hero";
 import Showvideo from "./components/Showvideo";
 import About from "./components/About";
+import Pitch from "./components/Pitch";
+import Designer from "./components/Designer";
 
 export default function Home() {
   const [isHoveringLinkOrButton, setIsHoveringLinkOrButton] = useState(false)
@@ -25,6 +27,8 @@ export default function Home() {
       <HeroSection />
       <Showvideo />
       <About />
+      <Pitch />
+      <Designer />
     </>
   );
 }
